@@ -3,18 +3,7 @@ const router = express.Router(); // Tratando a rota para este arquivo
 const mysql = require('mysql');
 
 //Definindo a conexão com o MySQL
-const db = mysql.createConnection({
-    host : 'localhost',
-    user: 'root',
-    password : 'Cde34rfc',
-    database : 'nodemysql'
-});
-
-//Estabelecendo a conexão
-db.connect((err)=>{
-    if(err) throw (err);
-    console.log('MySQL Connected!')
-});
+const db = require('../mysqlconnection');
 
 // fornecedores
 router.get('/', (req, res, next)=>{

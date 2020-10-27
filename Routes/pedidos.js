@@ -4,12 +4,8 @@ const router = express.Router();
 const mysql = require('mysql');
 
 //Definindo a conexão com o MySQL
-const db = mysql.createConnection({
-    host : 'localhost',
-    user: 'root',
-    password : 'Cde34rfc',
-    database : 'nodemysql'
-});
+const db = require('../mysqlconnection');
+
 const Pedidos = require('../Modules/pedidos');
 
 router.get('/', (req, res, next)=>{
